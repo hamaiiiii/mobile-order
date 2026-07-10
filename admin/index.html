@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Management Screen</title>
+    <link rel="stylesheet" href="admin.css">
+  </head>
+
+  <body>
+
+    <header>Management Screen</header>
+
+    <main>
+      <div class="title-row">
+        <p>注文番号</p>
+        <p>注文内容</p>
+        <p>金額</p>
+        <p>受付状況</p>
+        <p>change</p>
+      </div>
+      <div class="orders-container"></div>
+    </main>
+
+    <div class="bottom-menu">
+      <button class ="information-button">Information</button>
+      <button class ="menu-button">販売状況</button>
+    </div>
+    <div class="information-overlay">
+      <div class="information-box">
+        <h2>記入欄</h2>
+        <textarea class="information-input" placeholder="ここに入力"></textarea>
+        <button class="information-send">送信</button>
+        <h2>履歴</h2>
+        <div class="information-history"></div>
+      </div>
+    </div>
+    <div class="sales-overlay">
+      <div class="sales-box">
+        <h2>販売状況</h2>
+        <div class="sales-row">
+          <p class="sales-name">ホットドッグ</p>
+          <p class="sales-status" data-status="plain">販売中</p>
+          <button class="sales-change-button" data-menu="plain">変更</button>
+        </div>
+        <div class="sales-row">
+          <p class="sales-name">チーズホットドッグ</p>
+          <p class="sales-status" data-status="cheese">売切中</p>
+          <button class="sales-change-button" data-menu="cheese">変更</button>
+        </div>
+        <div class="sales-row">
+          <p class="sales-name">明太マヨホットドッグ</p>
+          <p class="sales-status" data-status="mentai">売切中</p>
+          <button class="sales-change-button" data-menu="mentai">変更</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+  </body>
+
+</html>

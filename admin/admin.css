@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin:0;
+  background:rgb(195, 194, 194);
+  font-family:sans-serif;
+}
+
+/* ヘッダー */
+header {
+  background: black;
+  color: white;
+  text-align: center;
+  font-size:20px;
+  padding: 30px;
+}
+
+/* メイン */
+main {
+  width:80%;
+  margin:auto;
+  margin-top:50px;
+}
+
+/* タイトル行 */
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+/* 注文行 */
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid gray;
+  font-weight: bold;
+}
+
+.change-button{
+  background:white;
+  color:black;
+  border:none;
+  padding:15px 20px;
+  border-radius:20px;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.status-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time{
+  font-size:12px;
+  color:black;
+  margin-top:5px;
+}
+
+.bottom-menu{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  padding:20px;
+  background:black;
+}
+
+.information-button,.menu-button{
+  width:300px;
+  height:80px;
+  font-size:30px;
+  border-radius:15px;
+}
+
+.information-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,0.4);
+  z-index:2000;
+}
+
+.information-box{
+  width:70%;
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  box-sizing:border-box;
+}
+
+.information-input{
+  width:100%;
+  height:200px;
+  font-size:25px;
+  margin:20px 0;
+  box-sizing:border-box;
+}
+
+.information-send{
+  display:block;
+  margin:10px auto 0;
+  background:rgb(193, 192, 192);
+  color:black;
+  font-size:30px;
+  padding:15px 40px;
+  border-radius:20px;
+}
+
+.information-button{
+  background:white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.menu-button{
+  background:white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.sales-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.3);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.sales-box{
+  width:500px;
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.sales-box h2{
+  margin:0;
+  padding:20px;
+  text-align:center;
+  background:rgb(47, 47, 47);
+  color:white;
+}
+
+.sales-row{
+  padding:20px;
+  border-bottom:1px solid gray;
+  text-align:center;
+}
+
+.sales-name{
+  font-size:20px;
+}
+
+.sales-status{
+  font-size:25px;
+  font-weight:bold;
+  margin:20px 0;
+}
+
+.sale{
+  color:black;
+}
+.sold{
+  color:red;
+}
+
+.sales-change-button{
+  background:black;
+  color:white;
+  border:none;
+  padding:15px 40px;
+  border-radius:20px;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.new-order{
+  animation:newBlink 0.5s infinite;
+}
+
+@keyframes newBlink{
+  0%{background:#fff8a8;}
+  50%{background:white;}
+  100%{background:#fff8a8;}
+}

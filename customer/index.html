@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang = "ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Hot Dog モバイル</title>
+    <link rel="stylesheet" href="./customer.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#f4c061">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="./assets/thumbnail-logo.png">
+    <link rel="preload" as="image" href="./assets/splash.png">
+  </head>
+
+  <body>
+
+    <div class="splash-screen">
+      <div class="splash-overlay">
+        <img src="/customer/assets/splash.png" class="splash-bg" alt="splash">
+        <img src="/customer/assets/splash-logo.png" class="splash-logo" alt="モバメシ">
+      </div>
+    </div>
+
+    <header>
+      <p id="header">Hot Dog<p>
+    </header>
+
+    <div class="confirm-overlay">
+      <div class="confirm-box">
+        <div class="text"><h2>注文確認</h2></div>
+        <p class="confirm-text">注文を確定してよろしいですか</p>
+        <p class="confirm-note">注文に間違いはありませんか</p>
+        <div class="confirm-buttons">
+          <button class="yes-button">はい</button>
+          <button class="no-button">いいえ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert-overlay">
+      <div class="alert-box">
+        <p class="alert-mark">※</p>
+        <p class="alert-text">未受け取りの商品が合計5個を超えるため、<br>現在は注文できません。</p>
+        <p class="alert-subtext">商品を受け取り後、再度ご注文ください。</p>
+        <div class="alert-button">了解</div>
+      </div>
+    </div>
+
+    <div class="loading-overlay">
+      <div class="loading-box">
+        <p class="loading-text">送信中…</p>
+        <p class="loading-subtext">しばらくお待ちください</p>
+        <button class="loading-close">閉じる</button>
+      </div>
+    </div>
+
+    <div class="ticket-overlay">
+      <div class="ticket">
+        <p class="ticket-message1">「完成」から10分以内にご来店ください</p>
+        <div class="ticket-number"></div>
+        <div class="text"><h2>予約完了</h2></div>
+        <p class="ticket-message2">ありがとうございます</p>
+      </div>
+    </div>
+
+    <main>
+      <section class="menu-section">
+        <div class="title">
+          <h2>MENU</h2>
+        </div>
+        <div class="menu-box">
+
+          <div class="menu-item" data-menu="plain">
+            <div class="soldout-overlay">
+              <p class = "soldout-label">SoldOut</p>
+            </div>
+            <div class="menu-card">
+              <img src="/customer/assets/plain.png">
+              <div class="menu-info">
+                <p class = "item-name">ホットドッグ</p>
+                <p class = "item-price">¥300</p>
+              </div>
+            </div>
+            <div class="count-buttons">
+                <button class="minus">-</button>
+                <p class="count-number">0</p>
+                <button class="plus">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" data-menu="cheese">
+            <div class="soldout-overlay">
+              <p class = "soldout-label">SoldOut</p>
+            </div>
+            <div class="menu-card">
+              <img src="/customer/assets/cheese.png">
+              <div class="menu-info">
+                <p class = "item-name">チーズ<br>ホットドッグ</p>
+                <p class = "item-price">¥350</p>
+              </div>
+            </div>
+            <div class="count-buttons">
+              <button class="minus">-</button>
+              <p class="count-number">0</p>
+              <button class="plus">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" data-menu="mentai">
+            <div class="soldout-overlay">
+              <p class = "soldout-label">SoldOut</p>
+            </div>
+            <div class="menu-card">
+              <img src="/customer/assets/mentai.png">
+              <div class="menu-info">
+                <p class = "item-name">明太マヨ<br>ホットドッグ</p>
+                <p class = "item-price">¥350</p>
+              </div>
+            </div>
+            <div class="count-buttons">
+              <button class="minus">-</button>
+              <p class="count-number">0</p>
+              <button class="plus">+</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="information-section">
+        <div class="title">
+          <h2>INFORMATION</h2>
+        </div>
+
+        <div class="information-board">
+        </div>
+      </section>
+
+      <section class="history-section">
+        <div class="title">
+          <h2>MY ORDERS</h2>
+        </div>
+        <div class="history-box">
+        </div>
+        <div class="history-detail-overlay">
+          <div class="history-detail-card">
+            <div class="detail-header">
+              <h2 class="detail-order-number text"></h2>
+            </div>
+            <div class="detail-body">
+              <hr>
+              <div class="detail-status-box">
+                <p class="detail-status"></p>
+                <p class="detail-time"></p>
+              </div>
+              <hr>
+              <h3>注文内容</h3>
+              <div class="detail-items"></div>
+              <hr>
+              <div class="detail-total">
+                <span>合計</span>
+                <span class="detail-total-price"></span>
+              </div>
+              <hr>
+              <p class="detail-close-text">画面をタップ</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- mapの画像貼る -->
+      <section class="Access-section">
+        <div class="title">
+          <h2>ACCESS</h2>
+        </div>
+        <img src="/customer/assets/map.png" alt="マップ">
+      </section>
+
+      <div class="fixed-cart">
+        <p class="fixed-warning">※1度に注文は5つまでしかできません</p>
+        <div class="fixed-cart-info">
+          <div class="fixed-item">
+            <p class="fixed-label">商品</p>
+            <p class="fixed-name">なし</p>
+          </div>
+          <div class="fixed-item">
+            <p class="fixed-label">数量</p>
+            <p class="fixed-quantity">0</p>
+          </div>
+          <div class="fixed-item">
+            <p class="fixed-label">金額</p>
+            <p class="fixed-price">0円</p>
+          </div>
+          <button class="order-button">注文</button>
+        </div>
+      </div>
+      
+    </main>
+
+    <div class="complete-overlay">
+      <div class="complete-box">
+        <p class="complete-title">ご注文が完成しました</p>
+        <p class="complete-number"></p>
+        <button class="complete-button">了解</button>
+      </div>
+    </div>
+
+    <script type="module" src="customer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang = "ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>FOOD</title>
+    <link rel="stylesheet" href="./customer.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#f4c061">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="../assets/icon.png">
+  </head>
+
+  <body>
+
+    <header>
+      <h1>FOOD</h1>
+    </header>
+
+    <div class="confirm-overlay">
+      <div class="confirm-box">
+        <h2>注文確認画面</h2>
+        <p class="confirm-text">注文を確定してよろしいですか</p>
+        <p class="confirm-note">注文に間違いはありませんか</p>
+        <div class="confirm-buttons">
+          <button class="yes-button">はい</button>
+          <button class="no-button">いいえ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert-overlay">
+      <div class="alert-box">
+        <p class="alert-mark">※</p>
+        <p class="alert-text">未受け取りの商品が合計5個を超えるため、<br>現在は注文できません。</p>
+        <p class="alert-subtext">商品を受け取り後、再度ご注文ください。</p>
+        <div class="alert-button">了解</div>
+      </div>
+    </div>
+
+    <div class="ticket-overlay">
+      <div class="ticket">
+        <p class="ticket-message">「完成」から10分以内にご来店ください</p>
+        <div class="ticket-number">A-023</div>
+        <h2>予約完了！</h2>
+        <p class="ticket-message2">ありがとうございます</p>
+        <p class="ticket-note">※画面スクショおすすめ</p>
+      </div>
+    </div>
+
+    <main>
+
+      <section class="history-section">
+        <h2>注文履歴</h2>
+        <div class="history-box">
+          <div class="history-title">
+            <p>注文番号</p>
+            <p>受付状況</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section">
+        <h2>🍖Menu</h2>
+        <div class="menu-box">
+
+          <div class="menu-item" data-menu="yakisoba">
+            <div class="soldout-overlay">
+              <p class = "soldout-label">SoldOut</p>
+            </div>
+            <div class="menu-card">
+              <img src="/assets/yakisoba.png">
+              <div class="menu-info">
+                <p class = "item-name">焼きそば</p>
+                <p class = "item-price">300円</p>
+              </div>
+            </div>
+            <div class="count-buttons">
+              <button class="minus">-</button>
+              <button class="count-number">0</button>
+              <button class="plus">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" data-menu="takoyaki">
+            <div class="soldout-overlay">
+              <p class = "soldout-label">SoldOut</p>
+            </div>
+            <div class="menu-cart">
+              <img src="/assets/takoyaki.png">
+              <div class="menu-info">
+                <p class = "item-name">たこ焼き</p>
+                <p class = "item-price">400円</p>
+                <div class="count-buttons">
+                  <button class="minus">-</button>
+                  <button class="count-number">0</button>
+                  <button class="plus">+</button>
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="cart-section">
+        <h2>🛒カート</h2>
+        <p class="cart-limit">※1度に注文は5つまでしかできません</p>
+        <div class="cart-box">
+          <div class="cart-title">
+            <p>商品名</p>
+            <p>数量</p>
+            <p>金額</p>
+          </div>
+          <div class="cart-items"></div>
+          <div class="total-row">
+            <p>合計</p>
+            <p class="total-price">0円</p>
+          </div>
+          <div class="order-button-area">
+            <button class="order-button">注文</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="complete-overlay">
+      <div class="complete-box">
+        <p class="complete-title">ご注文が完成しました</p>
+        <p class="complete-number"></p>
+        <button class="complete-button">了解</button>
+      </div>
+    </div>
+
+    <script type="module" src="customer.js"></script>
+  </body>
+</html>
