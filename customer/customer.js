@@ -12,6 +12,7 @@ import {
   onSnapshot,
   query,
   orderBy,
+  where,
   doc,
   runTransaction
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -376,7 +377,11 @@ ticket.addEventListener("click",(event)=>{
 })
 
 // 注文履歴取得
-const q = query(collection(db,"orders"),orderBy("createdAt","desc"))
+const q = query(
+  collection(db,"orders"),
+  where("deviceId","==",deviceId),
+  orderBy("createdAt","desc")
+)
 completeButton.addEventListener("click",()=>{
   completeOverlay.style.display = "none"
 })

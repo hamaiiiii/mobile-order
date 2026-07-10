@@ -730,7 +730,7 @@ header{
 
 .install-guide-box{
   width:80%;
-  max-width:500px;
+  max-width:600px;
   background:white;
   padding:40px 30px;
   border-radius:30px;
@@ -739,13 +739,13 @@ header{
 }
 
 .install-guide-title{
-  font-size:32px;
+  font-size:35px;
   font-weight:bold;
   margin-bottom:20px;
 }
 
 .install-guide-text{
-  font-size:22px;
+  font-size:25px;
   line-height:1.6;
   margin-bottom:30px;
 }
@@ -762,15 +762,19 @@ header{
 
 .install-guide-steps-ios p,
 .install-guide-steps-android p{
-  font-size:20px;
+  display:flex;
+  justify-content:center;
+  font-size:25px;
   margin:10px 0;
+
 }
 
 .install-guide-close{
   background:#f4c061;
+  color:black;
   border:none;
   border-radius:15px;
   padding:15px 40px;
-  font-size:24px;
+  font-size:23px;
   font-weight:bold;
 }
