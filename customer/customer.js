@@ -95,6 +95,40 @@ const detailItems =document.querySelector(".detail-items")
 const detailStatus =document.querySelector(".detail-status")
 const detailTime =document.querySelector(".detail-time")
 const detailTotalPrice =document.querySelector(".detail-total-price")
+const installGuideOverlay = document.querySelector(".install-guide-overlay")
+const installGuideClose = document.querySelector(".install-guide-close")
+const installGuideIOS = document.querySelector(".install-guide-steps-ios")
+const installGuideAndroid = document.querySelector(".install-guide-steps-android")
+
+function checkInstallGuide(){
+
+  // ホーム画面から開かれているか判定
+  const isStandalone =
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true
+
+  if(isStandalone){
+    return  // すでにアプリとして開かれているので、案内は表示しない
+  }
+
+  const userAgent = navigator.userAgent
+  const isIOS = /iPad|iPhone|iPod/.test(userAgent)
+  const isAndroid = /Android/.test(userAgent)
+
+  if(isIOS){
+    installGuideIOS.style.display = "block"
+  }else if(isAndroid){
+    installGuideAndroid.style.display = "block"
+  }else{
+    return  // PCなど対象外の環境では表示しない
+  }
+
+  installGuideOverlay.style.display = "flex"
+}
+
+installGuideClose.addEventListener("click",()=>{
+  installGuideOverlay.style.display = "none"
+})
 
 let activeItemCount = 0
 let deviceId = localStorage.getItem("deviceId")
@@ -115,6 +149,7 @@ window.addEventListener("load",()=>{
     if(splash){
       splash.remove()
     }
+    checkInstallGuide() 
   },2300)
 })
 
