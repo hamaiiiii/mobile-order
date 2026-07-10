@@ -33,6 +33,10 @@ body{
   animation:bgZoom 1.8s ease forwards;
 }
 
+.splash-logo{
+  border-radius:20px;
+}
+
 .splash-overlay{
   position:absolute;
   inset:0;
