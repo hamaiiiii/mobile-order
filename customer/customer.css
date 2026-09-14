@@ -199,6 +199,9 @@ header{
 .detail-order-number{
   font-size:60px;
   font-weight:bold;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .detail-body{
