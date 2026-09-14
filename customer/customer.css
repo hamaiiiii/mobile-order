@@ -193,16 +193,12 @@ header{
   background:white;
   color:black;
   text-align:center;
-  height:140px;
-  display:flex;
-  justify-content:center;
   align-items:center;
 }
 
 .detail-order-number{
   font-size:60px;
   font-weight:bold;
-  margin:0;
 }
 
 .detail-body{
