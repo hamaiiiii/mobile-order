@@ -33,10 +33,6 @@ body{
   animation:bgZoom 1.8s ease forwards;
 }
 
-.splash-logo{
-  border-radius:40px;
-}
-
 .splash-overlay{
   position:absolute;
   inset:0;
@@ -45,6 +41,7 @@ body{
 }
 
 .splash-logo{
+  border-radius:50px;
   width:260px;
   position:absolute;
   top:50%;
@@ -193,7 +190,7 @@ header{
   background:white;
   color:black;
   text-align:center;
-  padding:20px 0;
+  padding:20px 0 0;
 }
 
 .detail-order-number{
