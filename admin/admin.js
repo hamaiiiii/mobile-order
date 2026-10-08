@@ -73,26 +73,28 @@ onSnapshot(q, (snapshot) => {
     docs.forEach((orderDoc)=>{
       loadedOrderIds.add(orderDoc.id)
     })
-    
-      // 売上集計
-      const summary = {
-        "ホットドッグ": { quantity: 0, amount: 0 },
-        "チーズホットドッグ": { quantity: 0, amount: 0 },
-        "明太マヨホットドッグ": { quantity: 0, amount: 0 }
-      }
-      let grandTotal = 0
+    firstLoad = false
+  }
 
-      docs.forEach((orderDoc)=>{
-        const data = orderDoc.data()
-        data.items.forEach((item)=>{
-          const amount = Number(item.price.replace("¥",""))
-          if(summary[item.name]){
-            summary[item.name].quantity += item.quantity
-            summary[item.name].amount += amount
-          }
-          grandTotal += amount
-        })
+  // 売上集計
+  const summary = {
+      "ホットドッグ": { quantity: 0, amount: 0 },
+      "チーズホットドッグ": { quantity: 0, amount: 0 },
+      "明太マヨホットドッグ": { quantity: 0, amount: 0 }
+    }
+    let grandTotal = 0
+
+    docs.forEach((orderDoc)=>{
+      const data = orderDoc.data()
+      data.items.forEach((item)=>{
+      const amount = Number(item.price.replace("¥",""))
+        if(summary[item.name]){
+          summary[item.name].quantity += item.quantity
+          summary[item.name].amount += amount
+        }
+        grandTotal += amount
       })
+    })
 
       countPlain.textContent = summary["ホットドッグ"].quantity + "個"
       amountPlain.textContent = "¥" + summary["ホットドッグ"].amount
@@ -101,8 +103,6 @@ onSnapshot(q, (snapshot) => {
       countMentai.textContent = summary["明太マヨホットドッグ"].quantity + "個"
       amountMentai.textContent = "¥" + summary["明太マヨホットドッグ"].amount
       amountTotal.textContent = "¥" + grandTotal
-    firstLoad = false
-  }
 
   docs.forEach((orderDoc)=>{
 
