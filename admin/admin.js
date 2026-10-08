@@ -38,6 +38,8 @@ const informationBox = document.querySelector(".information-box")
 const informationHistory = document.querySelector(".information-history")
 const countPlain = document.getElementById("count-plain")
 const amountPlain = document.getElementById("amount-plain")
+const countPlain2 = document.getElementById("count-plain2")
+const amountPlain2 = document.getElementById("amount-plain2")
 const countCheese = document.getElementById("count-cheese")
 const amountCheese = document.getElementById("amount-cheese")
 const countMentai = document.getElementById("count-mentai")
@@ -79,6 +81,7 @@ onSnapshot(q, (snapshot) => {
   // 売上集計
   const summary = {
       "ホットドッグ": { quantity: 0, amount: 0 },
+      "倍ホットドッグ": { quantity: 0, amount: 0 },
       "チーズホットドッグ": { quantity: 0, amount: 0 },
       "明太マヨホットドッグ": { quantity: 0, amount: 0 }
     }
@@ -98,6 +101,8 @@ onSnapshot(q, (snapshot) => {
 
       countPlain.textContent = summary["ホットドッグ"].quantity + "個"
       amountPlain.textContent = "¥" + summary["ホットドッグ"].amount
+      countPlain2.textContent = summary["倍ホットドッグ"].quantity + "個"
+      amountPlain2.textContent = "¥" + summary["倍ホットドッグ"].amount
       countCheese.textContent = summary["チーズホットドッグ"].quantity + "個"
       amountCheese.textContent = "¥" + summary["チーズホットドッグ"].amount
       countMentai.textContent = summary["明太マヨホットドッグ"].quantity + "個"
