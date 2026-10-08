@@ -36,6 +36,13 @@ const informationButton = document.querySelector(".information-button")
 const informationOverlay = document.querySelector(".information-overlay")
 const informationBox = document.querySelector(".information-box")
 const informationHistory = document.querySelector(".information-history")
+const countPlain = document.getElementById("count-plain")
+const amountPlain = document.getElementById("amount-plain")
+const countCheese = document.getElementById("count-cheese")
+const amountCheese = document.getElementById("amount-cheese")
+const countMentai = document.getElementById("count-mentai")
+const amountMentai = document.getElementById("amount-mentai")
+const amountTotal = document.getElementById("amount-total")
 
 let blinkingOrderIds = new Set()
 let loadedOrderIds = new Set()
@@ -66,7 +73,34 @@ onSnapshot(q, (snapshot) => {
     docs.forEach((orderDoc)=>{
       loadedOrderIds.add(orderDoc.id)
     })
+    
+      // 売上集計
+      const summary = {
+        "ホットドッグ": { quantity: 0, amount: 0 },
+        "チーズホットドッグ": { quantity: 0, amount: 0 },
+        "明太マヨホットドッグ": { quantity: 0, amount: 0 }
+      }
+      let grandTotal = 0
 
+      docs.forEach((orderDoc)=>{
+        const data = orderDoc.data()
+        data.items.forEach((item)=>{
+          const amount = Number(item.price.replace("¥",""))
+          if(summary[item.name]){
+            summary[item.name].quantity += item.quantity
+            summary[item.name].amount += amount
+          }
+          grandTotal += amount
+        })
+      })
+
+      countPlain.textContent = summary["ホットドッグ"].quantity + "個"
+      amountPlain.textContent = "¥" + summary["ホットドッグ"].amount
+      countCheese.textContent = summary["チーズホットドッグ"].quantity + "個"
+      amountCheese.textContent = "¥" + summary["チーズホットドッグ"].amount
+      countMentai.textContent = summary["明太マヨホットドッグ"].quantity + "個"
+      amountMentai.textContent = "¥" + summary["明太マヨホットドッグ"].amount
+      amountTotal.textContent = "¥" + grandTotal
     firstLoad = false
   }
 
